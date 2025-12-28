@@ -7,6 +7,8 @@ const Lesson1_2 = () => {
     email: "shuichi.fujiike@gmail.com",
   });
 
+  // console.log({ ...form, firstName: "updated" });
+
   return (
     <div>
       <div className="flex mb-5">
@@ -17,9 +19,8 @@ const Lesson1_2 = () => {
             className="border border-slate-500"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setForm({
+                ...form,
                 firstName: e.target.value,
-                lastName: form.lastName,
-                email: form.email,
               })
             }
           />
@@ -31,9 +32,8 @@ const Lesson1_2 = () => {
             className="border border-slate-500"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setForm({
-                firstName: form.firstName,
+                ...form,
                 lastName: e.target.value,
-                email: form.email,
               })
             }
           />
@@ -45,8 +45,7 @@ const Lesson1_2 = () => {
             className="border border-slate-500"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setForm({
-                firstName: form.firstName,
-                lastName: form.lastName,
+                ...form,
                 email: e.target.value,
               })
             }
