@@ -8,6 +8,10 @@ const Lesson2_1 = () => {
     }
 
     window.addEventListener("pointermove", handleMove);
+
+    return () => {
+      window.removeEventListener("pointermove", handleMove);
+    };
   }, []);
   return (
     <div
